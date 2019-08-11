@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int                    titleHeight;//标题栏高度
     private int                    itemHeight;//item高度
-    private CityPickerBottomDialog dialogFragment;
+    private CityPickerBottomDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,25 +28,25 @@ public class MainActivity extends AppCompatActivity {
         titleHeight = getResources().getDimensionPixelSize(R.dimen.title_height_for_city_pick_bottom_sheet_dialog_fragment);
         itemHeight = getResources().getDimensionPixelSize(R.dimen.item_height_for_city_pick_bottom_sheet_dialog_fragment);
 
-        dialogFragment = new CityPickerBottomDialog(this);
-        dialogFragment.setTitle("选择地址");
-        dialogFragment.setDimAmount(0.5F);
-        dialogFragment.setOnSubmitClickListener(new CityPickerBottomDialog.OnSubmitClickListener() {
+        dialog = new CityPickerBottomDialog(this);
+        dialog.setTitle("选择地址");
+        dialog.setDimAmount(0.5F);//default = 0.5
+        dialog.setOnSubmitClickListener(new CityPickerBottomDialog.OnSubmitClickListener() {
             @Override
-            public void onSubmitClick(CityInfo province, CityInfo.CityListBeanX city,
-                                      CityInfo.CityListBeanX.CityListBean district) {
+            public void onSubmitClick(CityInfo province, CityInfo.CityListBeanX city, CityInfo.CityListBeanX.CityListBean district) {
                 String address = String.format("省市区:%s-%s-%s", province.name, city.name, district.name);
                 Log.e(TAG, "onSubmitClick: address=".concat(address));
                 toast(address);
+                dialog.dismiss();
             }
         });
-//        dialogFragment.setPeekHeight(titleHeight + itemHeight * 5);
-//        dialogFragment.setMaxHeight(titleHeight + itemHeight * 5);
+//        dialog.setPeekHeight(titleHeight + itemHeight * 5);
+//        dialog.setMaxHeight(titleHeight + itemHeight * 5);
 
         findViewById(R.id.btn_open).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialogFragment.show();
+                dialog.show();
             }
         });
     }

@@ -1,4 +1,8 @@
 # CityPicker
+ <ul>
+     <li><a href="https://github.com/actor20170211030627/CityPicker">Github</a></li>
+     <li><a href="https://gitee.com/actor20170211030627/CityPicker">Gitee码云(国内网速更快)</a></li>
+ </ul>
 ## 中国城市选择器
 
 ### 1.一个简单的城市选择器

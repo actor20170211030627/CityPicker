@@ -6,13 +6,14 @@
 ## 中国城市选择器
 
 ### 1.一个简单的城市选择器
-  数据来源: <a href="http://www.mca.gov.cn/article/sj/xzqh/2018/201804-12/20181201301111.html">2018年12月中华人民共和国县以上行政区划代码</a>
+  数据来源: <a href="http://www.mca.gov.cn/article/sj/xzqh/">中华人民共和国民政部</a>
 
 ### 2.Screenshot
 <img src="captures/1.png" width=35%></img>
 
 ### 3.Demo
-<a href="https://github.com/actor20170211030627/CityPicker/raw/master/captures/app-debug.apk">download apk</a>
+<a href="https://github.com/actor20170211030627/CityPicker/raw/master/captures/app-debug.apk">download apk</a> or scan qrcode:  <br/>
+<img src="captures/qrcode.png" width=35%></img>
 
 ### 4.USE使用
     //1.init in you application
@@ -34,19 +35,25 @@
     
     dialog.show();
 
-## 5.How to
+## 5. 需要在自己项目中集成<code>v7</code>包和<code>recyclerview</code>和<code>gson</code>, 否则报错
+    implementation 'com.android.support:appcompat-v7:version xxx' <br/>
+    implementation 'com.android.support:recyclerview-v7:xxx' <br/>
+    //https://github.com/google/gson
+    implementation ''com.google.code.gson:gson:xxx' <br/>
+
+## 6.How to
 To get a Git project into your build:
 
 **Step 1.** Add the JitPack repository to your build file
 
 Add it in your root build.gradle at the end of repositories:
 <pre>
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
 </pre>
 
 
@@ -57,7 +64,7 @@ Add it in your root build.gradle at the end of repositories:
 	        implementation 'com.github.actor20170211030627:CityPicker:version'
 	}
 
-### 6.TODO
+### 7.TODO
 <ol>
     <li>自定义item</li>
     <li>自定义item条数</li>
@@ -65,8 +72,8 @@ Add it in your root build.gradle at the end of repositories:
     <li>more...</li>
 </ol>
 
-### 7.Thanks:
+### 8.Thanks:
   <a href="https://github.com/crazyandcoder/citypicker">citypicker</a>,
   数据来源参考了这个项目, 感谢作者
 
-### 8.License [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+### 9.License [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)

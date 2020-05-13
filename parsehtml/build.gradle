@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //https://github.com/jhy/jsoup
+    implementation 'org.jsoup:jsoup:1.11.3'
+
+    //https://github.com/alibaba/fastjson
+    implementation 'com.alibaba:fastjson:1.2.9'
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
